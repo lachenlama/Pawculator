@@ -21,7 +21,7 @@ class NFTCalculator:
         return round(self.total_nfts - (self.total_nfts * self.treasury_percent), 0)
     
     def price_per_nft(self):
-        return round(self.target_raise / self.net_available_for_sale(), 5)
+        return round(self.target_raise / self.net_available_for_sale(), 2)
     
     def total_bribes(self):
         return 0.8 * self.target_raise
@@ -36,7 +36,7 @@ class NFTCalculator:
         # total_earnings = 0.8 * self.target_raise  # 80% for bribes
         # return round(total_earnings / (self.total_nfts * self.staked_percent), 2)
         net_bgt_capture = self.total_bgt_capture() * self.bera_price
-        return round(net_bgt_capture / (self.total_nfts * self.staked_percent * 100), 2)
+        return round(net_bgt_capture / (self.total_nfts * self.staked_percent), 2)
 
     def apr_per_nft(self, period_months=1):
         # monthly_earnings = self.pol_earnings_per_nft() / 12
@@ -50,5 +50,4 @@ class NFTCalculator:
             'pol_earnings_per_nft': self.pol_earnings_per_nft(),
             'apr': self.apr_per_nft(),
             'net_available_for_sale': self.net_available_for_sale(),
-            'total_bribes': self.total_bribes()
         }

@@ -53,6 +53,5 @@ async function updateCalculations() {
         <tr><th>Your Staked Value</th><td>$${data.effective_amount_staked}</td></tr>
         <tr><th>POL Earnings/NFT</th><td>$${data.pol_earnings_per_nft}</td></tr>
         <tr><th>APR</th><td>${data.apr}%</td></tr>
-        <tr><th>Total Bribes</th><td>$${data.total_bribes.toLocaleString()}</td></tr>
     `;
 }

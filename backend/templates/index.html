@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeraFarm Degen Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/style.css" rel="stylesheet">
+</head>
+<body class="paw-cursor">
+    <div class="container py-4">
+        <header class="text-center mb-5">
+            <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><path d="M30 20 Q50 5 70 20 L60 30 Q50 25 40 30 Z" fill="none" stroke="%2300E5B0" stroke-width="2"/></svg>' 
+                 class="bear-logo mb-3" alt="Bear Logo">
+            <h1 class="mb-2">GM Ser</h1>
+            <p class="text-muted">Ape into BeraFarm yields</p>
+        </header>
+
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="input-card glitch">
+                    <h3 class="mb-4"><i class="fas fa-cog me-2"></i>Degen Parameters</h3>
+                    <form id="calculator-form">
+                        <div class="mb-3">
+                            <label for="userNftStake" class="form-label">Your Bags</label>
+                            <input type="number" class="form-control" id="userNftStake" value="1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nftsStaked" class="form-label">Total Staked</label>
+                            <input type="number" class="form-control" id="nftsStaked" value="6969">
+                        </div>
+                        <div class="mb-3">
+                            <label for="avgBribe" class="form-label">Bribe Rate</label>
+                            <input type="number" step="0.01" class="form-control" id="avgBribe" value="1.80">
+                        </div>
+                        <div class="mb-3">
+                            <label for="beraPrice" class="form-label">Bera Price</label>
+                            <input type="number" step="0.01" class="form-control" id="beraPrice" value="5.70">
+                        </div>
+                        <div class="mb-3">
+                            <label for="stakedPercent" class="form-label">Staked %</label>
+                            <input type="range" class="form-range" id="stakedPercent" min="0" max="100" value="100">
+                            <div class="text-center number-display" id="stakedPercentValue">100%</div>
+                        </div>
+                        <button type="submit" class="btn btn-degen w-100 mt-3">
+                            <i class="fas fa-chart-line me-2"></i>Calculate APY
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="results-panel">
+                    <h3 class="mb-4"><i class="fas fa-coins me-2"></i>Yield Forecast</h3>
+                    <div class="yield-display number-display" id="yield-value">-</div>
+                    <table class="table table-borderless mt-4">
+                        <tbody id="results-table">
+                            <!-- Results will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                    <div class="text-center mt-3">
+                        <small class="text-muted">Bear market ready</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/style.js"></script>
+</body>
+</html>

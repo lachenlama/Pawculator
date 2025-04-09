@@ -41,7 +41,7 @@ class NFTCalculator:
     def apr_per_nft(self, period_months=1):
         # monthly_earnings = self.pol_earnings_per_nft() / 12
         # return round((monthly_earnings * period_months) / self.price_per_nft() * 100, 2)
-        return round((self.pol_earnings_per_nft() / self.price_per_nft()) * 12)
+        return round((self.pol_earnings_per_nft() / self.price_per_nft()) * 12 * 100)
 
     def calculate_all(self):
         return {

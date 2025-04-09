@@ -52,6 +52,7 @@ async function updateCalculations() {
         <tr><th>NFT Price</th><td>$${data.price_per_nft}</td></tr>
         <tr><th>Your Staked Value</th><td>$${data.effective_amount_staked}</td></tr>
         <tr><th>POL Earnings/NFT</th><td>$${data.pol_earnings_per_nft}</td></tr>
+        <tr><th>NFT price multiplier</th><td>${data.price_multipiler}</td></tr>
         <tr><th>APR</th><td>${data.apr}%</td></tr>
     `;
 }

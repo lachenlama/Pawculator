@@ -31,16 +31,15 @@ class NFTCalculator:
 
     def effective_amount_staked(self):
         return round(self.price_per_nft() * self.user_nft_stake, 2)
+    
+    def price_multipiler(self):
+        return round(self.pol_earnings_per_nft() / self.price_per_nft(), 2)
 
     def pol_earnings_per_nft(self):
-        # total_earnings = 0.8 * self.target_raise  # 80% for bribes
-        # return round(total_earnings / (self.total_nfts * self.staked_percent), 2)
         net_bgt_capture = self.total_bgt_capture() * self.bera_price
         return round(net_bgt_capture / (self.total_nfts * self.staked_percent), 2)
 
     def apr_per_nft(self, period_months=1):
-        # monthly_earnings = self.pol_earnings_per_nft() / 12
-        # return round((monthly_earnings * period_months) / self.price_per_nft() * 100, 2)
         return round((self.pol_earnings_per_nft() / self.price_per_nft()) * 12 * 100)
 
     def calculate_all(self):
@@ -50,4 +49,5 @@ class NFTCalculator:
             'pol_earnings_per_nft': self.pol_earnings_per_nft(),
             'apr': self.apr_per_nft(),
             'net_available_for_sale': self.net_available_for_sale(),
+            'price_multipiler': self.price_multipiler()
         }
